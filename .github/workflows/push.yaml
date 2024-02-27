@@ -39,10 +39,31 @@ jobs:
 
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
-        run: "ls | xargs -I{} -n1 zip -r {}.zip {}"
+        run: "ls *.xcframework | xargs -I{} -n1 zip -r {}.zip {}"
               
       - name: "Upload XCFrameworks"
         uses: "actions/upload-artifact@v4"
         with:
           name: "FFmpeg Kit XCFrameworks"
           path: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios/*.zip"
+
+  Release:
+    runs-on: "ubuntu-2204"
+
+    defaults:
+      run:
+        shell: "bash"
+    
+    if: "startsWith(github.ref, 'refs/tags/')"
+
+    steps:
+      - name: "Download XCFrameworks"
+        uses: "actions/download-artifact@v4"
+        with:
+          name: "FFmpeg Kit XCFrameworks"
+      
+      - name: "Create draft release"
+        uses: "softprops/action-gh-release@v1"
+        with:
+          draft: true
+          files: "*.zip"
