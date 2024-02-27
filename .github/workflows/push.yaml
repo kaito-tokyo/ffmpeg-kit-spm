@@ -36,7 +36,7 @@ jobs:
 
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
-        run: "ls *.xcframework | xargs -I{} -n1 zip -r {}.zip {}"
+        run: "ls -d *.xcframework | xargs -I{} -n1 zip -r {}.zip {}"
               
       - name: "Upload XCFrameworks"
         uses: "actions/upload-artifact@v4"
