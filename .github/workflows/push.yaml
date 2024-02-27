@@ -1,0 +1,39 @@
+name: "Push"
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "*"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  Build:
+    runs-on: "macos-14"
+
+    defaults:
+      run:
+        shell: "bash"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+        with:
+          submodules: "recursive"
+
+      - name: "Build XCFrameworks"
+        working-directory: "ffmpeg-kit"
+        run: "./ios.sh -x"
+
+      - name: "Zip XCFrameworks"
+        working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
+        run: "ls | xargs -I{} -n1 zip -r {}.zip {}"
+              
+      - name: "Upload XCFrameworks"
+        uses: "actions/upload-artifact@v4"
+        with:
+          name: "FFmpeg Kit XCFrameworks"
+          path: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios/*.zip"
