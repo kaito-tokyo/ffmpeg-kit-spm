@@ -34,9 +34,6 @@ jobs:
         working-directory: "ffmpeg-kit"
         run: "./ios.sh -x"
 
-      - run: "cat ffmpeg-kit/build.log"
-        if: "always()"
-
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
         run: "ls *.xcframework | xargs -I{} -n1 zip -r {}.zip {}"
