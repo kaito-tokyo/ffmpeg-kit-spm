@@ -50,6 +50,9 @@ jobs:
     defaults:
       run:
         shell: "bash"
+
+    needs:
+      - "Build"
     
     if: "startsWith(github.ref, 'refs/tags/build.')"
 
