@@ -25,7 +25,7 @@ jobs:
           submodules: "recursive"
       
       - name: "Install build dependencies"
-        run: "brew install automake autoconf"
+        run: "brew install automake autoconf libtool"
 
       - name: "Build XCFrameworks"
         working-directory: "ffmpeg-kit"
