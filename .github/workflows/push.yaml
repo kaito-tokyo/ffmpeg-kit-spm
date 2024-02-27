@@ -1,0 +1,66 @@
+name: "Push"
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "*"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  Build:
+    runs-on: "macos-14"
+
+    defaults:
+      run:
+        shell: "bash"
+
+    env:
+      DEVELOPER_DIR: "/Applications/Xcode_15.2.app"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+        with:
+          submodules: "recursive"
+      
+      - name: "Install build dependencies"
+        run: "brew install automake autoconf libtool"
+
+      - name: "Build XCFrameworks"
+        working-directory: "ffmpeg-kit"
+        run: "./ios.sh -x"
+
+      - name: "Zip XCFrameworks"
+        working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
+        run: "ls -d *.xcframework | xargs -I{} -n1 zip -r {}.zip {}"
+              
+      - name: "Upload XCFrameworks"
+        uses: "actions/upload-artifact@v4"
+        with:
+          name: "FFmpeg Kit XCFrameworks"
+          path: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios/*.zip"
+
+  Release:
+    runs-on: "ubuntu-2204"
+
+    defaults:
+      run:
+        shell: "bash"
+    
+    if: "startsWith(github.ref, 'refs/tags/build.')"
+
+    steps:
+      - name: "Download XCFrameworks"
+        uses: "actions/download-artifact@v4"
+        with:
+          name: "FFmpeg Kit XCFrameworks"
+      
+      - name: "Create draft release"
+        uses: "softprops/action-gh-release@v1"
+        with:
+          draft: true
+          files: "*.zip"
