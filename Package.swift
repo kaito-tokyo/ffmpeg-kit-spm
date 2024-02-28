@@ -51,7 +51,7 @@ let package = Package(
         "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0/libavutil.xcframework.zip",
       checksum: "b36a5c87dd78789443e18218ffc71fea845eef0d591611929ca0e0a8345662da"),
     .binaryTarget(
-      name: "libswreample",
+      name: "libswresample",
       url:
         "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0/libswresample.xcframework.zip",
       checksum: "6016beade776793b34188325dc60998e9f7a3d820ea10568d1517d1c1d828e52"),
