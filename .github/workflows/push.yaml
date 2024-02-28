@@ -38,10 +38,7 @@ jobs:
             --xcframework \
             --enable-ios-audiotoolbox \
             --enable-ios-avfoundation \
-            --enable-ios-bzip2 \
-            --enable-ios-videotoolbox \
-            --enable-ios-zlib \
-            --enable-ios-libiconv
+            --enable-ios-videotoolbox
 
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
