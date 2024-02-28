@@ -24,12 +24,17 @@ jobs:
         uses: "actions/checkout@v4"
         with:
           submodules: "recursive"
-      
+
       - name: "Install build dependencies"
         run: "brew install automake autoconf libtool meson autogen gtk-doc bison yasm"
 
       - name: "Add bison to PATH"
         run: 'echo "$(brew --prefix)/opt/bison/bin" >> "$GITHUB_PATH"'
+      
+      - name: "Download and extract FFmpegKit"
+        run: |
+          curl -fsSL https://github.com/arthenica/ffmpeg-kit/archive/refs/tags/v6.0.LTS.tar.gz | tar -xz
+          mv ffmpeg-kit-6.0.LTS ffmpeg-kit
 
       - name: "Build XCFrameworks"
         working-directory: "ffmpeg-kit"
