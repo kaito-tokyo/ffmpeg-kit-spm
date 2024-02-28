@@ -26,7 +26,7 @@ jobs:
           submodules: "recursive"
       
       - name: "Install build dependencies"
-        run: "brew install automake autoconf libtool meso autogen"
+        run: "brew install automake autoconf libtool meso autogen gtk-doc"
 
       - name: "Build XCFrameworks"
         working-directory: "ffmpeg-kit"
