@@ -33,7 +33,7 @@ jobs:
 
       - name: "Build XCFrameworks"
         working-directory: "ffmpeg-kit"
-        run: "./ios.sh -x --full"
+        run: "./ios.sh --xcframework --full --lts"
 
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
