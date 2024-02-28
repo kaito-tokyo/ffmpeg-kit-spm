@@ -26,7 +26,7 @@ jobs:
           submodules: "recursive"
       
       - name: "Install build dependencies"
-        run: "brew install automake autoconf libtool meso autogen gtk-doc bison"
+        run: "brew install automake autoconf libtool meso autogen gtk-doc bison yasm"
 
       - name: "Add bison to PATH"
         run: 'echo "$(brew --prefix)/opt/bison/bin" >> "$GITHUB_PATH"'
