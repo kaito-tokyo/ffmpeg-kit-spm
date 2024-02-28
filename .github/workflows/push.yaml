@@ -26,11 +26,19 @@ jobs:
           submodules: "recursive"
       
       - name: "Install build dependencies"
-        run: "brew install automake autoconf libtool"
+        run: "brew install automake autoconf libtool meson autogen gtk-doc bison yasm"
+
+      - name: "Add bison to PATH"
+        run: 'echo "$(brew --prefix)/opt/bison/bin" >> "$GITHUB_PATH"'
 
       - name: "Build XCFrameworks"
         working-directory: "ffmpeg-kit"
-        run: "./ios.sh -x --full"
+        run: |
+          ./ios.sh \
+            --xcframework \
+            --enable-ios-audiotoolbox \
+            --enable-ios-avfoundation \
+            --enable-ios-videotoolbox
 
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
