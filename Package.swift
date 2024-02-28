@@ -23,42 +23,42 @@ let package = Package(
     .binaryTarget(
       name: "ffmpegkit",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/ffmpegkit.xcframework.zip",
-      checksum: "c57c50addd1d42680317421ca23dcd4658fb5662e6a642af1403a45c485262f4"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/ffmpegkit.xcframework.zip",
+      checksum: "2c6cd33fd317909d2c015ec435cab4e0a82c2e7572269ead04b43506b5a7a4ee"),
     .binaryTarget(
       name: "libavcodec",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libavcodec.xcframework.zip",
-      checksum: "0093049674436b8cc8dda39302b629cbf2ba3b6c5ebd5f45de5c151455d586b6"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libavcodec.xcframework.zip",
+      checksum: "38e5c38e170bd5b0f1ccd7d36bcb78acaab6f05557e2061fa007b1666cb48e98"),
     .binaryTarget(
       name: "libavdevice",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libavdevice.xcframework.zip",
-      checksum: "ca754929a0c295c59f127f566110fde5fa3f4c1367b9bc0089fc2143061dc851"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libavdevice.xcframework.zip",
+      checksum: "d80ce6ba96ba11381aa713bca4c92e2b41ab6ddb38cc18862cbf16bf793648bc"),
     .binaryTarget(
       name: "libavfilter",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libavfilter.xcframework.zip",
-      checksum: "ed1f800e0a5154aa116f08a831febd1fc2d261f40b3db506e994fdc3c9c38152"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libavfilter.xcframework.zip",
+      checksum: "2bdc466246579b9e1b27389d980b4e2fa86e6299ffd5d996a95127223774f3a7"),
     .binaryTarget(
       name: "libavformat",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libavformat.xcframework.zip",
-      checksum: "21849dbf5db949782dc8a9bc02df04d7338791a1797e48930b8c4ef25e903203"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libavformat.xcframework.zip",
+      checksum: "c27699089947137d04f5bca132cf7065394fd01b933abfc48187f371289976cb"),
     .binaryTarget(
       name: "libavutil",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libavutil.xcframework.zip",
-      checksum: "b36a5c87dd78789443e18218ffc71fea845eef0d591611929ca0e0a8345662da"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libavutil.xcframework.zip",
+      checksum: "f5e5f77bfcea9d01608cd1c9a95a79b5dbc4422036d4fcfdd0e12dc456b7de06"),
     .binaryTarget(
       name: "libswresample",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libswresample.xcframework.zip",
-      checksum: "6016beade776793b34188325dc60998e9f7a3d820ea10568d1517d1c1d828e52"),
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libswresample.xcframework.zip",
+      checksum: "eca0fc496ffe55739a0d49b8933acc57b6c0cf317666ef7538378932e5b53c48"),
     .binaryTarget(
       name: "libswscale",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.1/libswscale.xcframework.zip",
-      checksum: "9b1747c1d3923ee00f641e0c0f5544e885586a6a99c8d3742d690a21b50c8c8a")
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.2/libswscale.xcframework.zip",
+      checksum: "3807328203e9650cc72d5aef84f3f18dda36540a5a6b627b7933ff078bacfdac")
   ]
 )
