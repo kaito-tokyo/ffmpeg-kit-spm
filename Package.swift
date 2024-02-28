@@ -58,7 +58,7 @@ let package = Package(
     .binaryTarget(
       name: "libswscale",
       url:
-        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0/libswscale.xcframework.zip",
+        "https://github.com/kaito-tokyo/ffmpeg-kit-spm/releases/download/6.0.0/libswscale.xcframework.zip",
       checksum: "9b1747c1d3923ee00f641e0c0f5544e885586a6a99c8d3742d690a21b50c8c8a")
   ]
 )
