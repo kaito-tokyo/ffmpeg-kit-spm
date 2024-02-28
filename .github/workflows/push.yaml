@@ -33,7 +33,7 @@ jobs:
 
       - name: "Build XCFrameworks"
         working-directory: "ffmpeg-kit"
-        run: "./ios.sh --xcframework --full --lts"
+        run: "./ios.sh --xcframework --full --disable-lib-gnutls"
 
       - name: "Zip XCFrameworks"
         working-directory: "ffmpeg-kit/prebuilt/bundle-apple-xcframework-ios"
